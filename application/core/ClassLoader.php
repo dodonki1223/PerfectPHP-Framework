@@ -18,7 +18,7 @@ class ClassLoader
 
     /**
      * PHPにオートローダクラスを登録する
-	 *   spl_autoload_register関数を使用して「loadClass」メソッドを呼び出す
+     *   spl_autoload_register関数を使用して「loadClass」メソッドを呼び出す
      *   ※spl_autoload_registerはautoload関数のキューを作成し、定義された順に
      *     それを実行していく
      */
@@ -31,7 +31,7 @@ class ClassLoader
 
     /**
      * オートロードの対象となるディレクトリを登録する
-	 *   オートロードの対象となるディレクトリを配列で受け取り、メンバ変数に
+     *   オートロードの対象となるディレクトリを配列で受け取り、メンバ変数に
      *   セットする
      * 
      * @param array $dir オートロードの対象となるディレクトリのフルパスを保持した配列
@@ -46,11 +46,11 @@ class ClassLoader
 
     /**
      * クラスの読み込み
-	 *   メンバ変数のディレクトリ群と引数で渡されたクラス名を元にファイルの存在と読
+     *   メンバ変数のディレクトリ群と引数で渡されたクラス名を元にファイルの存在と読
      *   み込み可能かチェックし読み込み可能な時はそのファイルを読み込む
      * 
      * @param  string $class クラス名
-	 * @return null   
+     * @return null   
      */
     public function loadClass($class)
     {
