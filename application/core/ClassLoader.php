@@ -15,7 +15,6 @@ class ClassLoader
      */ 
     protected $dirs;
 
-
     /**
      * PHPにオートローダクラスを登録する
      *   spl_autoload_register関数を使用して「loadClass」メソッドを呼び出す
@@ -33,6 +32,7 @@ class ClassLoader
      * オートロードの対象となるディレクトリを登録する
      *   オートロードの対象となるディレクトリを配列で受け取り、メンバ変数に
      *   セットする
+     *   実行するたびに$dirs[0],$dirs[1],……,$dirs[X-1],$dirs[X]と格納されていく
      * 
      * @param array $dir オートロードの対象となるディレクトリのフルパスを保持した配列
      */
