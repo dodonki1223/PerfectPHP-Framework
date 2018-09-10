@@ -102,4 +102,43 @@ class Request
 
     }
 
+    public function getBaseUrl()
+    {
+
+        $scriptName = $_SERVER['SCRIPT_NAME'];
+        $requestUri = $this->getRequestUri();
+
+        if ( 0 === strpos($requestUri, $scriptName) ) {
+
+            return $scriptName;
+
+        } else if ( 0 === strpos($requestUri, dirname($scriptName)) ) {
+
+            return rtrim(dirname($scriptName), '/');
+
+        }
+
+        return '';
+
+    }
+
+    public function getPathInfo()
+    {
+
+        $baseUrl    = $this->getBaseUrl();
+        $requestUri = $this->getRequestUri();
+
+        if ( false != ($pos = strpos($requestUri, '?')) ) {
+
+            $requestUri = substr($requestUri, 0, $pos);
+
+        }
+
+        $pathInfo = (string)substr($requestUri, strlen($baseUrl));
+
+        return $pathInfo;
+
+    }
+
+
 }
